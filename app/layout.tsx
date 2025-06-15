@@ -6,6 +6,7 @@ import { ThemeProvider } from "@/components/theme-provider"
 import { cn } from "@/lib/utils"
 import Navigation from "@/components/navigation"
 import { PageTransition } from "@/components/page-transition"
+import { CustomCursor } from "@/components/custom-cursor"
 
 const inter = Inter({
   subsets: ["latin"],
@@ -21,7 +22,6 @@ const outfit = Outfit({
 export const metadata: Metadata = {
   title: "Nova Corp | Digital Innovation Studio",
   description: "Creating exceptional websites and SaaS solutions with cutting-edge technology and design.",
-    generator: 'v0.dev'
 }
 
 export default function RootLayout({
@@ -33,12 +33,13 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body
         className={cn(
-          "min-h-screen bg-black font-sans antialiased overflow-x-hidden text-zinc-100",
+          "min-h-screen bg-black font-sans antialiased overflow-x-hidden text-zinc-100 cursor-none",
           inter.variable,
           outfit.variable,
         )}
       >
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false} disableTransitionOnChange>
+          <CustomCursor />
           <Navigation />
           <PageTransition>
             <main className="relative">{children}</main>

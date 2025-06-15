@@ -7,9 +7,10 @@ import Link from "next/link"
 import { ArrowUpRight, ExternalLink, Github } from "lucide-react"
 import { ScrollReveal } from "@/components/scroll-reveal"
 import { AnimatedCard } from "@/components/animated-card"
-import { MagneticButton } from "@/components/magnetic-button"
+import { AnimatedButton } from "@/components/animated-button"
 import { ParallaxSection } from "@/components/parallax-section"
 import { TextScramble } from "@/components/text-scramble"
+import { GradientText } from "@/components/gradient-text"
 
 const projects = [
   {
@@ -117,18 +118,10 @@ export default function PortfolioPage() {
               transition={{ type: "spring", stiffness: 200 }}
             >
               <span className="text-white">Our</span>{" "}
-              <motion.span
-                className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-cyan-400"
-                whileHover={{
-                  backgroundImage: [
-                    "linear-gradient(90deg, #a855f7, #06b6d4)",
-                    "linear-gradient(90deg, #06b6d4, #ec4899)",
-                    "linear-gradient(90deg, #ec4899, #a855f7)",
-                  ],
-                  transition: { duration: 3, repeat: Number.POSITIVE_INFINITY },
-                }}
-              >
-                <TextScramble text="Portfolio" />
+              <motion.span whileHover={{ scale: 1.05 }}>
+                <GradientText>
+                  <TextScramble text="Portfolio" />
+                </GradientText>
               </motion.span>
             </motion.h1>
 
@@ -305,18 +298,8 @@ export default function PortfolioPage() {
             >
               Ready to start your
               <br />
-              <motion.span
-                className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-cyan-400"
-                animate={{
-                  backgroundImage: [
-                    "linear-gradient(90deg, #a855f7, #06b6d4)",
-                    "linear-gradient(90deg, #06b6d4, #ec4899)",
-                    "linear-gradient(90deg, #ec4899, #a855f7)",
-                  ],
-                }}
-                transition={{ duration: 10, repeat: Number.POSITIVE_INFINITY }}
-              >
-                next project?
+              <motion.span whileHover={{ scale: 1.05 }}>
+                <GradientText>next project?</GradientText>
               </motion.span>
             </motion.h2>
 
@@ -324,14 +307,14 @@ export default function PortfolioPage() {
               Let's collaborate and bring your vision to life with cutting-edge technology and exceptional design.
             </p>
 
-            <MagneticButton
-              size="lg"
-              className="bg-gradient-to-r from-purple-600 to-cyan-600 hover:from-purple-700 hover:to-cyan-700 text-white border-0"
-              strength={50}
-              onClick={() => (window.location.href = "/contact")}
-            >
-              Start Your Project <ArrowUpRight className="ml-2 h-4 w-4" />
-            </MagneticButton>
+            <Link href="/contact">
+              <AnimatedButton
+                size="lg"
+                className="bg-gradient-to-r from-purple-600 to-cyan-600 hover:from-purple-700 hover:to-cyan-700 text-white"
+              >
+                Start Your Project <ArrowUpRight className="ml-2 h-4 w-4" />
+              </AnimatedButton>
+            </Link>
           </ScrollReveal>
         </div>
       </section>

@@ -6,6 +6,7 @@ import { FadeIn } from "@/components/fade-in"
 import { FloatingText } from "@/components/floating-text"
 import { TeamMember } from "@/components/team-member"
 import { ParallaxText } from "@/components/parallax-text"
+import { GradientText } from "@/components/gradient-text"
 
 export default function AboutPage() {
   return (
@@ -15,7 +16,7 @@ export default function AboutPage() {
         <div className="container px-4">
           <FadeIn>
             <h1 className="font-heading text-5xl md:text-7xl mb-6 tracking-tighter">
-              About <span className="text-purple-500">Nova Corp</span>
+              About <GradientText>Nova Corp</GradientText>
             </h1>
           </FadeIn>
 
@@ -58,7 +59,7 @@ export default function AboutPage() {
         <div className="container px-4">
           <FloatingText>
             <h2 className="font-heading text-3xl md:text-5xl mb-16 text-center">
-              Our Core <span className="text-purple-500">Values</span>
+              Our Core <GradientText>Values</GradientText>
             </h2>
           </FloatingText>
 
@@ -95,7 +96,7 @@ export default function AboutPage() {
         <div className="container px-4">
           <FloatingText>
             <h2 className="font-heading text-3xl md:text-5xl mb-16 text-center">
-              Meet Our <span className="text-purple-500">Team</span>
+              Meet Our <GradientText>Team</GradientText>
             </h2>
           </FloatingText>
 

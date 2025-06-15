@@ -7,10 +7,11 @@ import Link from "next/link"
 import { Card } from "@/components/ui/card"
 import { AnimatedCard } from "@/components/animated-card"
 import { ScrollReveal } from "@/components/scroll-reveal"
-import { MagneticButton } from "@/components/magnetic-button"
+import { AnimatedButton } from "@/components/animated-button"
 import { ParallaxSection } from "@/components/parallax-section"
 import { TextScramble } from "@/components/text-scramble"
 import { HeroBackground } from "@/components/hero-background"
+import { GradientText } from "@/components/gradient-text"
 
 export default function Home() {
   const containerRef = useRef<HTMLDivElement>(null)
@@ -86,13 +87,14 @@ export default function Home() {
             <span className="text-white">NOVA</span>
             <br />
             <motion.span
-              className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-cyan-400"
               whileHover={{
                 scale: 1.05,
                 transition: { duration: 0.3 },
               }}
             >
-              <TextScramble text="CORP" />
+              <GradientText>
+                <TextScramble text="CORP" />
+              </GradientText>
             </motion.span>
           </motion.h1>
 
@@ -114,26 +116,26 @@ export default function Home() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.8 }}
           >
-            <MagneticButton
-              size="lg"
-              className="bg-gradient-to-r from-purple-600 to-cyan-600 hover:from-purple-700 hover:to-cyan-700 text-white border-0"
-              strength={40}
-              glowColor="rgba(168, 85, 247, 0.4)"
-              onClick={() => (window.location.href = "/portfolio")}
-            >
-              View Our Work <ArrowRight className="ml-2 h-4 w-4" />
-            </MagneticButton>
+            <Link href="/portfolio">
+              <AnimatedButton
+                size="lg"
+                className="bg-gradient-to-r from-purple-600 to-cyan-600 hover:from-purple-700 hover:to-cyan-700 text-white"
+                glowColor="rgba(168, 85, 247, 0.4)"
+              >
+                View Our Work <ArrowRight className="ml-2 h-4 w-4" />
+              </AnimatedButton>
+            </Link>
 
-            <MagneticButton
-              size="lg"
-              variant="outline"
-              className="border-zinc-700 text-zinc-300 hover:bg-zinc-800 hover:text-white"
-              strength={40}
-              glowColor="rgba(6, 182, 212, 0.4)"
-              onClick={() => (window.location.href = "/contact")}
-            >
-              Get Started
-            </MagneticButton>
+            <Link href="/contact">
+              <AnimatedButton
+                size="lg"
+                variant="outline"
+                className="border-zinc-700 text-zinc-300 hover:bg-zinc-800 hover:text-white"
+                glowColor="rgba(6, 182, 212, 0.4)"
+              >
+                Get Started
+              </AnimatedButton>
+            </Link>
           </motion.div>
 
           {/* Stats */}
@@ -202,8 +204,7 @@ export default function Home() {
         <div className="container px-4">
           <ScrollReveal className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-heading mb-6">
-              What We{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-cyan-400">Create</span>
+              What We <GradientText>Create</GradientText>
             </h2>
             <p className="text-xl text-zinc-300 max-w-3xl mx-auto">
               We specialize in building digital solutions that combine beautiful design with powerful functionality.
@@ -298,8 +299,7 @@ export default function Home() {
         <div className="container px-4">
           <ScrollReveal className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-heading mb-6">
-              Featured{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-cyan-400">Work</span>
+              Featured <GradientText>Work</GradientText>
             </h2>
             <p className="text-xl text-zinc-300 max-w-3xl mx-auto">
               A selection of our recent projects that showcase our expertise and creativity.
@@ -367,13 +367,11 @@ export default function Home() {
           </div>
 
           <ScrollReveal className="text-center" delay={0.4}>
-            <MagneticButton
-              variant="outline"
-              className="border-zinc-700 text-zinc-300 hover:bg-zinc-800"
-              onClick={() => (window.location.href = "/portfolio")}
-            >
-              View All Projects <ArrowRight className="ml-2 h-4 w-4" />
-            </MagneticButton>
+            <Link href="/portfolio">
+              <AnimatedButton variant="outline" className="border-zinc-700 text-zinc-300 hover:bg-zinc-800">
+                View All Projects <ArrowRight className="ml-2 h-4 w-4" />
+              </AnimatedButton>
+            </Link>
           </ScrollReveal>
         </div>
       </section>
@@ -383,10 +381,7 @@ export default function Home() {
         <div className="container px-4">
           <ScrollReveal className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-heading mb-6">
-              Client{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-cyan-400">
-                Success
-              </span>
+              Client <GradientText>Success</GradientText>
             </h2>
             <p className="text-xl text-zinc-300 max-w-3xl mx-auto">
               Hear what our clients have to say about working with Nova Corp.
@@ -457,13 +452,12 @@ export default function Home() {
               Ready to build something
               <br />
               <motion.span
-                className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-cyan-400"
                 whileHover={{
                   scale: 1.05,
                   transition: { duration: 0.3 },
                 }}
               >
-                extraordinary?
+                <GradientText>extraordinary?</GradientText>
               </motion.span>
             </h2>
 
@@ -472,26 +466,26 @@ export default function Home() {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
-              <MagneticButton
-                size="lg"
-                className="bg-gradient-to-r from-purple-600 to-cyan-600 hover:from-purple-700 hover:to-cyan-700 text-white border-0"
-                strength={50}
-                onClick={() => (window.location.href = "/contact")}
-              >
-                <Sparkles className="mr-2 h-5 w-5" />
-                Start Your Project
-              </MagneticButton>
+              <Link href="/contact">
+                <AnimatedButton
+                  size="lg"
+                  className="bg-gradient-to-r from-purple-600 to-cyan-600 hover:from-purple-700 hover:to-cyan-700 text-white"
+                >
+                  <Sparkles className="mr-2 h-5 w-5" />
+                  Start Your Project
+                </AnimatedButton>
+              </Link>
 
-              <MagneticButton
-                size="lg"
-                variant="outline"
-                className="border-zinc-700 text-zinc-300 hover:bg-zinc-800"
-                strength={50}
-                glowColor="rgba(6, 182, 212, 0.3)"
-                onClick={() => (window.location.href = "/about")}
-              >
-                Learn More About Us
-              </MagneticButton>
+              <Link href="/about">
+                <AnimatedButton
+                  size="lg"
+                  variant="outline"
+                  className="border-zinc-700 text-zinc-300 hover:bg-zinc-800"
+                  glowColor="rgba(6, 182, 212, 0.3)"
+                >
+                  Learn More About Us
+                </AnimatedButton>
+              </Link>
             </div>
 
             {/* Added content under the CTA section */}
