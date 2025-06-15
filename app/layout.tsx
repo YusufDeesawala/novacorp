@@ -33,7 +33,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body
         className={cn(
-          "min-h-screen bg-black font-sans antialiased overflow-x-hidden text-zinc-100 cursor-none",
+          "min-h-screen bg-black font-sans antialiased overflow-x-hidden text-zinc-100",
           inter.variable,
           outfit.variable,
         )}
